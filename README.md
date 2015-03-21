@@ -1,1 +1,1 @@
-# drone-map
+Re-writing the Don't Fly Drones Here map. More tomorrow - https://www.mapbox.com/drone/no-fly/#
