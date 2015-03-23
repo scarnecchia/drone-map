@@ -1,6 +1,6 @@
 #Restricted Airspace
 
-This is an update toMapBox's "Don't Fly Drone's Here" map: https://www.mapbox.com/drone/no-fly/ with new resources and input from the UAV community (https://www.facebook.com/groups/uavLegalNews/).
+This is an update to MapBox's "Don't Fly Drone's Here" map: https://www.mapbox.com/drone/no-fly/ with new resources and input from the UAV community (https://www.facebook.com/groups/uavLegalNews/).
 
 A working version can found at https://scarnecchia.github.io/maps/drones/drones.html.
 
