@@ -1,0 +1,25 @@
+_prefs: 
+  mapid: ''
+  saveCenter: true
+_properties: {}
+attribution: ''
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -106.5619
+  - 33.0225
+  - 8
+description: ''
+format: png24
+interactivity_layer: ''
+layers: null
+maxzoom: 16
+minzoom: 4
+name: ''
+source: "mapbox:///scarndp.98ca573e"
+styles: 
+  - style.mss
+template: ''

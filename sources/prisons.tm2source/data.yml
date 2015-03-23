@@ -1,0 +1,31 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: scarndp.170d2f35
+  rev: s-cb62cbc6
+  saveCenter: true
+attribution: ''
+center: 
+  - -104.2383
+  - 41.3108
+  - 4
+description: ''
+Layer: 
+  - id: prisonsUS2
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/prisonsUS2.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: US Prisons
+    fields: 
+      descriptio: String
+      extrude: Number
+      Name: String
+      tessellate: Number
+      visibility: Number
+    properties: 
+      "buffer-size": 16
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 12
+minzoom: 4
+name: Prisons

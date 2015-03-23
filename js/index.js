@@ -12,18 +12,21 @@ var southWest = L.latLng(8.538, -178.989),
     shareControl: true,
     legendControl: true
 })
+
 .addControl(L.mapbox.geocoderControl('mapbox.places'))
 .setView([40.044, -98.130], 5);
 
-var airPortURL = 'sources/geojson/5_mile_airport.geojson';
+var restricted = L.mapbox.tileLayer('scarndp.698e2446').addTo(map);
+
+/*var airPortURL = 'sources/geojson/usAirports_5mile.geojson';
 var milURL = 'sources/geojson/us_military.geojson';
-var parkURL = 'sources/geojson/us_national_park.geojson';
+var parkURL = 'sources/geojson/usNationalParks.json';*/
 var tfrURL = 'https://tempflightrestrictions.herokuapp.com/tfr';
 var powerPlantURL = 'sources/geojson/USPowerPlants2.geojson';
 var prisonsURL = 'sources/geojson/prisonsUS2.geojson';
 var sportsVenue = 'sources/geoJson/usSportsVenues.geojson';
 
-var airPortStyle = {
+/*var airPortStyle = {
    'fillColor': '#808080',
    'fillOpacity': 0.5,
    'stroke': false,
@@ -42,7 +45,7 @@ var parkStyle = {
    'fillOpacity': 0.6,
    'stroke': false,
    'lineJoin': 'round'
-}
+}*/
 
 var tfrStyle = {
    'fillColor': '#FCBA05',
@@ -65,7 +68,7 @@ var prisonStyle = {
    'lineJoin': 'round'
 }
 
-    $.getJSON(milURL, function(data){
+/*    $.getJSON(milURL, function(data){
     // add GeoJSON layer to the map once the file is loaded
     var usMilitary = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
@@ -89,7 +92,7 @@ var prisonStyle = {
     }).addTo(map);
     })
 
-    $.getJSON(parkURL, function(data){
+$.getJSON(parkURL, function(data){
     // add GeoJSON layer to the map once the file is loaded
     var usParks = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
@@ -111,7 +114,7 @@ var prisonStyle = {
             })
         }
     }).addTo(map);
-    })
+    })*/
 
 $.getJSON(tfrURL, function(data){
     var tfr =  L.geoJson(data, {
@@ -186,7 +189,7 @@ $.getJSON(prisonsURL, function(data){
   });
 });
 
-       $.getJSON(airPortURL, function(data){
+/*$.getJSON(airPortURL, function(data){
     // add GeoJSON layer to the map once the file is loaded
     var airPort = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
@@ -208,7 +211,7 @@ $.getJSON(prisonsURL, function(data){
             })
         }
     }).addTo(map);
-    })
+    })*/
 
 $('.mapbox-share').click(function() {
     $('.info').fadeOut();
@@ -217,5 +220,6 @@ $('.mapbox-share').click(function() {
 });
 
 L.control.locate().addTo(map);
+L.control.scale().addTo(map);
 map.legendControl.addLegend(document.getElementById('legend').innerHTML)
 map.attributionControl.addAttribution('<a href="https://github.com/mapbox/drone-feedback">Mapbox</a>');
