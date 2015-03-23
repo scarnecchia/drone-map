@@ -4,9 +4,9 @@ Map {
 #usAirports_5mile {
   line-width: 1;
   line-color: #808080;
-  line-opacity: 0.5;
+  line-opacity: 0.6;
   polygon-fill: #808080;
-    polygon-opacity: 0.6;
+    polygon-opacity: 0.3;
   [zoom>=10] {
     text-size: 10;
   text-wrap-width: 100;
@@ -24,7 +24,7 @@ Map {
 }
 
 #us_national_park {
-  line-width: 1;
+  line-width: 0;
   line-color: #663399;
   line-opacity: 0.5;
   polygon-fill: #663399;
@@ -46,7 +46,7 @@ Map {
 }
 
 #us_military {
-  line-width: 1;
+  line-width: 0;
   line-color: #6B8E23;
   line-opacity: 0.5;
   polygon-fill: #6B8E23;
@@ -65,5 +65,12 @@ Map {
   text-placement-type: 'simple';
   text-clip: false;
     }
-}
 
+#prisonsUS2 {
+  line-width: 0;
+  line-color: #993300;
+  line-opacity: 0.5;
+  polygon-fill: #993300;
+  polygon-opacity: 0.5;
+    }
+}
