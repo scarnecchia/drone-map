@@ -1,0 +1,37 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: scarndp.0359fc40
+  rev: s-aeb842e6
+  saveCenter: true
+attribution: ''
+center: 
+  - -97.196
+  - 36.3085
+  - 9
+description: ''
+Layer: 
+  - id: usSportsVenues
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/usSportsVenues.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: Sports Venues
+    fields: 
+      altitudeMode: String
+      begin: String
+      description: String
+      drawOrder: String
+      end: String
+      extrude: Number
+      icon: String
+      Name: String
+      tessellate: Number
+      timestamp: String
+      visibility: Number
+    properties: 
+      "buffer-size": 16
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 12
+minzoom: 4
+name: US Sports Venues

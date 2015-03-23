@@ -16,15 +16,14 @@ var southWest = L.latLng(8.538, -178.989),
 .addControl(L.mapbox.geocoderControl('mapbox.places'))
 .setView([40.044, -98.130], 5);
 
-var restricted = L.mapbox.tileLayer('scarndp.966872ea').addTo(map);
-var restrictedGrid = L.mapbox.gridLayer('scarndp.966872ea').addTo(map);
+var restricted = L.mapbox.tileLayer('scarndp.698e2446').addTo(map);
+var restrictedGrid = L.mapbox.gridLayer('scarndp.698e2446').addTo(map);
 var restrictedControl = L.mapbox.gridControl(restrictedGrid).addTo(map);
 restrictedControl.options.follow = true;
 
 var tfrURL = 'https://tempflightrestrictions.herokuapp.com/tfr';
 var powerPlantURL = 'sources/geojson/USPowerPlants2.geojson';
 var prisonsURL = 'sources/geojson/prisonsUS2.geojson';
-var sportsVenue = 'sources/geoJson/usSportsVenues.geojson';
 
 var tfrStyle = {
    'fillColor': '#FCBA05',

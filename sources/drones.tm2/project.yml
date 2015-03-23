@@ -18,8 +18,8 @@ interactivity_layer: ''
 layers: null
 maxzoom: 16
 minzoom: 4
-name: ''
-source: "mapbox:///scarndp.98ca573e"
+name: No Fly Zones
+source: "mapbox:///scarndp.98ca573e,scarndp.0359fc40"
 styles: 
   - style.mss
 template: ''

@@ -2,11 +2,11 @@ Map {
 }
 
 #usAirports_5mile {
-  line-width: 0;
+  line-width: 1;
   line-color: #808080;
-  line-opacity: 0.5;
+  line-opacity: 0.6;
   polygon-fill: #808080;
-    polygon-opacity: 0.6;
+    polygon-opacity: 0.3;
   [zoom>=10] {
     text-size: 10;
   text-wrap-width: 100;
@@ -67,3 +67,10 @@ Map {
     }
 }
 
+#usSportsVenues {
+  line-width: 0;
+  line-color: #8099e8;
+  line-opacity: 0.5;
+  polygon-fill: #8099e8;
+   polygon-opacity: 0.3;
+}
