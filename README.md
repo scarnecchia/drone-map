@@ -11,6 +11,7 @@ Currently the map shows US airports with a 5-mile radius, US National Parks, Mil
 - The Power Plant data is suspect
 - Prisons and Powerplants are currently using point data, rather than polygons, making the no fly zone around them arbitrary (currently 200m and 800m radii, respectively)
 - Missing pop-up data
+- Needs data source attribution
 
 ##Roadmap
 - Add a seperate layer with Class B, C, and D airspace
