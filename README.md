@@ -16,6 +16,8 @@ Currently the map shows US airports with a 5-mile radius, US National Parks, Mil
 ##Roadmap
 - Add a seperate layer with Class B, C, and D airspace
 - Add additional sensitive sites as deemed necessary by UAV community
-- Add l.map.gridLayer and l.map.gridControl to the existing map to provide better pop-up data
+- ~~Add l.map.gridLayer and l.map.gridControl to the existing map to provide better pop-up data~~
+	- UTFGrid is being depreciated, need to find a work around.
 - Update TFR data
 - Refine distances around sensitive sites and airports
+- Rewrite in Mapbox GL as tools become available.
