@@ -1,10 +1,10 @@
 #Restricted Airspace
 
-This is an update to MapBox's "Don't Fly Drone's Here" map: https://www.mapbox.com/drone/no-fly/ with new resources and input from the UAV community (https://www.facebook.com/groups/uavLegalNews/).
+This is an update to MapBox's "Don't Fly Drones Here" map: https://www.mapbox.com/drone/no-fly/ with new resources and input from the UAV community (https://www.facebook.com/groups/uavLegalNews/).
 
 A working version can found at https://scarnecchia.github.io/maps/drones/drones.html.
 
-Currently the map shows US airports with a 5-mile radius, US National Parks, 	Military Bases, Sports Venues, and Temporary Flight Restrictions. The map also includes sensitive sites where it is inadvisable to fly, such as power plants and prisons.
+Currently the map shows US airports with a 5-mile radius, US National Parks, Military Bases, Sports Venues, and Temporary Flight Restrictions. The map also includes sensitive sites where it is inadvisable to fly, such as power plants and prisons.
 
 ##Known Issues
 - The Temporary Flight Restrictions are out of date. Mapbox was scraping the FAA NOTAM website for updates, but this script appears to no longer be functioning.
