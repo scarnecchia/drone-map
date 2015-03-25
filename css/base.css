@@ -46,3 +46,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@media only screen and (max-width:640px) {
+.hide-mobile {
+	display: none !important;
+}
+}
+
+.hide-mobile {
+display: block;
+}

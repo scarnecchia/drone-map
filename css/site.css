@@ -15,5 +15,33 @@ body { margin:0; padding:0; }
   }
 
 .clearfix {
-  overflow: auto;
+   overflow: auto;
 }
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#overlay {
+	  left: 50px;
+	  top: 10px;
+	  padding: 0 16px;
+	  width: 20%;
+	  background: rgba(0,0,0,0.68);
+	  border-radius: 4px 4px;
+	  color: #FFF;
+	  z-index: 100;
+	  position: absolute;
+	  font-size: 12px;
+	  font-family: sans-serif;
+	  color: #FFF;
+ }
+
+ .js-close {
+  cursor: pointer;
+}
+

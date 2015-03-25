@@ -1,0 +1,1 @@
+cat *.geojson | tippecanoe -o classBCD.mbtiles -z12 -Z4 -l Airspace -n "Class BCD Airspace"

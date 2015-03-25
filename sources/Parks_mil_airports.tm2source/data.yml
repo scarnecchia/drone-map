@@ -1,0 +1,63 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: scarndp.65ae43e9
+  rev: s-b394a008
+  saveCenter: true
+attribution: ''
+center: 
+  - -97.0313
+  - 38.891
+  - 4
+description: ''
+Layer: 
+  - id: usAirports
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/depreciated assets/usAirports_5mile2.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: US Airports with a 5 mile no fly zone
+    fields: 
+      iata_code: String
+      name: String
+      type: String
+    properties: 
+      "buffer-size": 16
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: usNationalPark
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/depreciated assets/us_national_park2.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: US National Parks
+    fields: 
+      ALPHACODE: String
+      DESIGNATIO: String
+      name: String
+      Shape_Area: Number
+      Shape_Leng: Number
+      STABBR: String
+      STFIPS: String
+    properties: 
+      "buffer-size": 16
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: usMilitary
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/depreciated assets/us_military2.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: usMilitary
+    fields: 
+      BRANCH: String
+      FACILITY_T: String
+      INSTALLA_2: String
+      name: String
+      SHAPE_AREA: Number
+      SHAPE_LEN: Number
+      STFIPS: String
+    properties: 
+      "buffer-size": 16
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 12
+minzoom: 4
+name: ''

@@ -4,21 +4,21 @@
 
 <Parameters>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-97.2949,39.8423,4</Parameter>
+  <Parameter name="center">-97.5586,41.5086,4</Parameter>
   <Parameter name="format">png24</Parameter>
   <Parameter name="maxzoom">16</Parameter>
   <Parameter name="minzoom">4</Parameter>
   <Parameter name="name"><![CDATA[No Fly Zones]]></Parameter>
-  <Parameter name="source"><![CDATA[mapbox:///scarndp.98ca573e,scarndp.0359fc40]]></Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///scarndp.65ae43e9,scarndp.0359fc40,scarndp.a69ec4e3]]></Parameter>
 </Parameters>
 
 
-<Style name="usAirports_5mile" filter-mode="first">
+<Style name="usAirports" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <LineSymbolizer stroke-width="1" stroke="#808080" stroke-opacity="0.6" />
     <PolygonSymbolizer fill="#808080" fill-opacity="0.3" />
-    <TextSymbolizer size="10" wrap-width="100" wrap-before="true" fill="#555555" halo-radius="1" face-name="Open Sans Bold" placement="interior" avoid-edges="true" allow-overlap="true" placement-type="simple" clip="false" ><![CDATA[[name]]]></TextSymbolizer>
+    <TextSymbolizer size="10" wrap-width="60" wrap-before="true" fill="#555555" halo-radius="1" face-name="Open Sans Bold" placement="interior" avoid-edges="true" allow-overlap="true" placement-type="simple" clip="false" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>750000</MinScaleDenominator>
@@ -26,16 +26,16 @@
     <PolygonSymbolizer fill="#808080" fill-opacity="0.3" />
   </Rule>
 </Style>
-<Layer name="usAirports_5mile"
+<Layer name="usAirports"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>usAirports_5mile</StyleName>  </Layer>
+    <StyleName>usAirports</StyleName>  </Layer>
 
-<Style name="us_national_park" filter-mode="first">
+<Style name="usNationalPark" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <LineSymbolizer stroke-width="0" stroke="#663399" stroke-opacity="0.5" />
     <PolygonSymbolizer fill="#663399" fill-opacity="0.5" />
-    <TextSymbolizer size="9" wrap-width="100" wrap-before="true" fill="#555555" halo-radius="1" face-name="Open Sans Bold" placement="interior" avoid-edges="true" allow-overlap="true" placement-type="simple" clip="false" ><![CDATA[[DESIGNATIO]]]></TextSymbolizer>
+    <TextSymbolizer size="9" wrap-width="60" wrap-before="true" fill="#555555" halo-radius="1" face-name="Open Sans Bold" placement="interior" avoid-edges="true" allow-overlap="true" placement-type="simple" clip="false" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>750000</MinScaleDenominator>
@@ -43,16 +43,16 @@
     <PolygonSymbolizer fill="#663399" fill-opacity="0.5" />
   </Rule>
 </Style>
-<Layer name="us_national_park"
+<Layer name="usNationalPark"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>us_national_park</StyleName>  </Layer>
+    <StyleName>usNationalPark</StyleName>  </Layer>
 
-<Style name="us_military" filter-mode="first">
+<Style name="usMilitary" filter-mode="first">
   <Rule>
     <MaxScaleDenominator>750000</MaxScaleDenominator>
     <LineSymbolizer stroke-width="0" stroke="#6b8e23" stroke-opacity="0.5" />
     <PolygonSymbolizer fill="#6b8e23" fill-opacity="0.5" />
-    <TextSymbolizer size="10" wrap-width="100" wrap-before="true" fill="#222222" halo-radius="1" face-name="Open Sans Bold" placement="interior" avoid-edges="true" allow-overlap="true" placement-type="simple" clip="false" ><![CDATA[[INSTALLATI]]]></TextSymbolizer>
+    <TextSymbolizer size="10" wrap-width="60" wrap-before="true" fill="#222222" halo-radius="1" face-name="Open Sans Bold" placement="interior" avoid-edges="true" allow-overlap="true" placement-type="simple" clip="false" ><![CDATA[[name]]]></TextSymbolizer>
   </Rule>
   <Rule>
     <MinScaleDenominator>750000</MinScaleDenominator>
@@ -60,18 +60,30 @@
     <PolygonSymbolizer fill="#6b8e23" fill-opacity="0.5" />
   </Rule>
 </Style>
-<Layer name="us_military"
+<Layer name="usMilitary"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>us_military</StyleName>  </Layer>
+    <StyleName>usMilitary</StyleName>  </Layer>
 
-<Style name="usSportsVenues" filter-mode="first">
+<Style name="usSportsVenues2" filter-mode="first">
   <Rule>
     <LineSymbolizer stroke-width="0" stroke="#8099e8" stroke-opacity="0.5" />
     <PolygonSymbolizer fill="#8099e8" fill-opacity="0.3" />
   </Rule>
 </Style>
-<Layer name="usSportsVenues"
+<Layer name="usSportsVenues2"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>usSportsVenues</StyleName>  </Layer>
+    <StyleName>usSportsVenues2</StyleName>  </Layer>
+
+<Layer name="class_d"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Layer name="class_c"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Layer name="class_b"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
 
 </Map>

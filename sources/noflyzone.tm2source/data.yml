@@ -1,0 +1,27 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: ''
+  rev: ''
+  saveCenter: true
+attribution: ''
+center: 
+  - -1.582
+  - 42.4235
+  - 4
+description: ''
+Layer: 
+  - id: names
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/depreciated assets/names.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: No Fly Zone
+    fields: 
+      name: String
+    properties: 
+      "buffer-size": 18
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 12
+minzoom: 4
+name: No Fly Zone

@@ -1,0 +1,58 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: scarndp.a69ec4e3
+  rev: s-0d6cd04d
+  saveCenter: true
+attribution: "https://nfdc.faa.gov/xwiki/bin/view/NFDC/56DaySub-2013-05-02"
+center: 
+  - 2.9142
+  - 36.779
+  - 4
+description: Class B, D, & C Airspace
+Layer: 
+  - id: class_d
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/class_d.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: Class D
+    fields: 
+      AIRSPACE: String
+      HIGHALT: String
+      LOWALT: String
+      NAME: String
+    properties: 
+      "buffer-size": 16
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: class_c
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/class_c.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: Class C Airspace
+    fields: 
+      AIRSPACE: String
+      HIGHALT: String
+      LOWALT: String
+      NAME: String
+    properties: 
+      "buffer-size": 16
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: class_b
+    Datasource: 
+      file: /Users/scarndp/Github/drone-map/sources/geojson/class_b.geojson
+      layer: OGRGeoJSON
+      type: ogr
+    description: Class B Airspace
+    fields: 
+      AIRSPACE: String
+      HIGHALT: String
+      LOWALT: String
+      NAME: String
+    properties: 
+      "buffer-size": 16
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 12
+minzoom: 4
+name: Restricted Airspace

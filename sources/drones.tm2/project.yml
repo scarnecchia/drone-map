@@ -9,17 +9,17 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - -97.2949
-  - 39.8423
+  - -97.5586
+  - 41.5086
   - 4
 description: ''
 format: png24
-interactivity_layer: ''
+interactivity_layer: usAirports
 layers: null
 maxzoom: 16
 minzoom: 4
 name: No Fly Zones
-source: "mapbox:///scarndp.98ca573e,scarndp.0359fc40"
+source: "mapbox:///scarndp.65ae43e9,scarndp.0359fc40,scarndp.a69ec4e3"
 styles: 
   - style.mss
 template: ''

@@ -2,7 +2,7 @@ _prefs:
   disabled: []
   inspector: false
   mapid: scarndp.0359fc40
-  rev: s-aeb842e6
+  rev: s-8e432506
   saveCenter: true
 attribution: ''
 center: 
@@ -11,26 +11,16 @@ center:
   - 9
 description: ''
 Layer: 
-  - id: usSportsVenues
+  - id: usSportsVenues2
     Datasource: 
-      file: /Users/scarndp/Github/drone-map/sources/geojson/usSportsVenues.geojson
+      file: /Users/scarndp/Github/drone-map/sources/geojson/depreciated assets/usSportsVenues2.geojson
       layer: OGRGeoJSON
       type: ogr
-    description: Sports Venues
+    description: ''
     fields: 
-      altitudeMode: String
-      begin: String
-      description: String
-      drawOrder: String
-      end: String
-      extrude: Number
-      icon: String
-      Name: String
-      tessellate: Number
-      timestamp: String
-      visibility: Number
+      name: String
     properties: 
-      "buffer-size": 16
+      "buffer-size": 8
     srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
 maxzoom: 12
 minzoom: 4
