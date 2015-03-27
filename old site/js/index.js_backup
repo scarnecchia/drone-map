@@ -1,0 +1,147 @@
+var airPortURL = 'sources/geojson/5_mile_airport.geojson';
+var airPortStyle = {
+   'fillColor': '#808080',
+   'fillOpacity': 0.5,
+   'stroke': false,
+   'lineJoin': 'round'
+}
+   $.getJSON(airPortURL, function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    var airPort = L.geoJson(data, {
+      onEachFeature: function (feature, layer) {
+        //layer.bindPopup(feature.properties.name).addTo(map);
+        layer.setStyle(airPortStyle);
+            var pop = L.popup();
+            layer.on('mouseover', function(e){
+                var content = layer.feature.properties.name;
+                pop.setLatLng(e.latlng)
+                   .setContent(content)
+                   .openOn(map);
+
+                layer.on('mousemove', function(e) {
+                    pop.setLatLng(e.latlng);
+                });
+            });
+            layer.on('mouseout', function(e){
+                map.closePopup();
+            })
+        }
+    }).addTo(map);
+    })
+
+ar milURL = 'sources/geojson/us_military.geojson';
+var milStyle = {
+   'fillColor': '#6B8E23',
+   'fillOpacity': 0.6,
+   'stroke': false,
+   'lineJoin': 'round'
+}
+
+    $.getJSON(milURL, function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    var usMilitary = L.geoJson(data, {
+      onEachFeature: function (feature, layer) {
+        //layer.bindPopup(feature.properties.INSTALLATI).addTo(map);
+        layer.setStyle(milStyle);
+            var pop = L.popup();
+            layer.on('mouseover', function(e){
+                var content = layer.feature.properties.INSTALLATI;
+                pop.setLatLng(e.latlng)
+                   .setContent(content)
+                   .openOn(map);
+
+                layer.on('mousemove', function(e) {
+                    pop.setLatLng(e.latlng);
+                });
+            });
+            layer.on('mouseout', function(e){
+                map.closePopup();
+            })
+        }
+    }).addTo(map);
+    })
+
+var parkURL = 'sources/geojson/us_national_park.geojson';
+var parkStyle = {
+   'fillColor': '#663399',
+   'fillOpacity': 0.6,
+   'stroke': false,
+   'lineJoin': 'round'
+}
+
+    $.getJSON(parkURL, function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    var usParks = L.geoJson(data, {
+      onEachFeature: function (feature, layer) {
+        //layer.bindPopup(feature.properties.PARKNAME).addTo(map);
+        layer.setStyle(parkStyle);
+            var pop = L.popup();
+            layer.on('mouseover', function(e){
+                var content = layer.feature.properties.PARKNAME;
+                pop.setLatLng(e.latlng)
+                   .setContent(content)
+                   .openOn(map);
+
+                layer.on('mousemove', function(e) {
+                    pop.setLatLng(e.latlng);
+                });
+            });
+            layer.on('mouseout', function(e){
+                map.closePopup();
+            })
+        }
+    }).addTo(map);
+    })
+
+var tfrURL = 'https://tempflightrestrictions.herokuapp.com/tfr';
+var tfrStyle = {
+   'fillColor': '#FCBA05',
+   'fillOpacity': 0.6,
+   'stroke': false,
+   'lineJoin': 'round'
+}
+
+$.get(tfrURL, function(data){
+    var tfr =  L.geoJson(data, {
+        onEachFeature: function (feature, layer) {
+            layer.setStyle(tfrStyle);
+
+            var pop = L.popup();
+            layer.on('mouseover', function(e){
+                var content = layer.feature.properties.name;
+                pop.setLatLng(e.latlng)
+                   .setContent(content)
+                   .openOn(map);
+
+                layer.on('mousemove', function(e) {
+                    pop.setLatLng(e.latlng);
+                });
+            });
+            layer.on('mouseout', function(e){
+                map.closePopup();
+            })
+        }
+    }).addTo(map);
+    })
+
+var powerPlantURL = 'sources/geojson/USPowerPlants.geojson';
+var powerPlantStyle = {
+   'fillColor': '#A52A2A',
+   'fillOpacity': 0.6,
+   'stroke': false,
+   'lineJoin': 'round'
+}
+
+   $.getJSON(powerPlantURL, function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    var powerPlant = L.geoJson(data, {
+      onEachFeature: function (feature, layer) {
+        layer.setStyle(powerPlantStyle);
+        layer.bindPopup(feature.properties.name).addTo(map);
+    },
+            pointToLayer: function (feature, latlng) {
+                return L.circle(latlng, 1600).addTo(map);
+    //L.circle([powerPlant], 500).addTo(map);
+}
+  });
+});

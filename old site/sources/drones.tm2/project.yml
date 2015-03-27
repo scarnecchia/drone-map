@@ -1,0 +1,25 @@
+_prefs: 
+  mapid: scarndp.698e2446
+  saveCenter: true
+_properties: {}
+attribution: ''
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -79.4971
+  - 41.7057
+  - 5
+description: ''
+format: png24
+interactivity_layer: usAirports
+layers: null
+maxzoom: 16
+minzoom: 4
+name: No Fly Zones
+source: "mapbox:///scarndp.65ae43e9,scarndp.0359fc40,scarndp.a69ec4e3,scarndp.170d2f35"
+styles: 
+  - style.mss
+template: ''
