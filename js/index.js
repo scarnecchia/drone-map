@@ -12,7 +12,6 @@ var southWest = L.latLng(8.538, -178.989),
     legendControl: true,
     gridControl: true
 })
-
 .addControl(L.mapbox.geocoderControl('mapbox.places'))
 .setView([40.044, -98.130], 5);
 
@@ -125,8 +124,112 @@ $.getJSON(tfrURL, function(data){
     }).addTo(map);
     })
 
+/*map.on('click', function(ev) {
+    // ev.latlng gives us the coordinates of
+    // the spot clicked on the map.
+    var fc = ev.latlng;
+    var c = ev.latlng;
 
-L.control.locate().addTo(map);
+    var geojson = [
+          {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [fc.lng, fc.lat]
+        },
+        "properties": {
+          "marker-color": "#ff8888"
+        },
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [c.lng, c.lat]
+        },
+        "properties": {
+          "marker-color": "#ff8888"
+        }
+      }, 
+        {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [fc.lng, fc.lat],
+            [c.lng, c.lat]
+          ]
+        },
+        "properties": {
+          "stroke": "#000",
+          "stroke-opacity": 0.5,
+          "stroke-width": 4
+        }
+      }
+    ];
+
+distanceLayer.setGeoJSON(geojson);
+
+    var container = document.getElementById('distance');
+    container.innerHTML = (fc.distanceTo(c)).toFixed(0) + 'm';
+});*/
+
+distanceLayer = L.mapbox.featureLayer().addTo(map);
+
+L.control.locate({
+    position: 'topleft',
+    drawCircle: true,
+    follow: true,
+}).addTo(map);
+
+map.on('locationfound', function(e) { 
+  var fc = e.latlng;
+  
+  map.on('click', function(e) {
+    var c = e.latlng;
+    var geojson = [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [c.lng, c.lat]
+        },
+        "properties": {
+          "marker-color": "#ff8888"
+        }
+      }, {
+        "type": "Feature",
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [fc.lng, fc.lat],
+            [c.lng, c.lat]
+          ]
+        },
+        "properties": {
+          "stroke": "#000",
+          "stroke-opacity": 0.5,
+          "stroke-width": 4
+        }
+      }
+    ];
+
+distanceLayer.setGeoJSON(geojson);
+
+var container = document.getElementById('distance');
+container.innerHTML = ((fc.distanceTo(c)/1000) * 0.621).toFixed(3) + 'miles';
+}),
+
+map.on('stopfollowing', function() {
+  map.off()
+});
+});
+
+/*lc.start();
+
+map.on('startfollowing', function(e) {
+  var fc = e.latlng
+});*/
 L.control.scale().addTo(map);
 L.control.layers({
 'Base Map': L.mapbox.tileLayer('scarndp.lg4e20pk').addTo(map),
