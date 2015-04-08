@@ -15,11 +15,11 @@ var southWest = L.latLng(8.538, -178.989),
 .addControl(L.mapbox.geocoderControl('mapbox.places'))
 .setView([40.044, -98.130], 5);
 
-var tfrURL = 'https://tempflightrestrictions.herokuapp.com/tfr';
+/*var tfrURL = 'https://tempflightrestrictions.herokuapp.com/tfr';*/
 /*var powerPlantURL = 'sources/USPowerPlants2.geojson';
 var prisonsURL = 'sources/prisonsUS2.geojson';*/
 
-var tfrStyle = {
+/*var tfrStyle = {
    'fillColor': '#FCBA05',
    'fillOpacity': 0.6,
    'stroke': false,
@@ -38,7 +38,7 @@ var prisonStyle = {
    'fillOpacity': 0.6,
    'stroke': false,
    'lineJoin': 'round'
-}
+}*/
 
 /*   $.getJSON(powerPlantURL, function(data){
     var powerPlant = L.geoJson(data, {
@@ -101,7 +101,7 @@ $('.js-close').click(function() {
     $('.top-bar').fadeIn();
 }); 
 
-$.getJSON(tfrURL, function(data){
+/*$.getJSON(tfrURL, function(data){
     var tfr =  L.geoJson(data, {
         onEachFeature: function (feature, layer) {
             layer.setStyle(tfrStyle);
@@ -122,57 +122,21 @@ $.getJSON(tfrURL, function(data){
             })
         }
     }).addTo(map);
-    })
+    })*/
 
-/*map.on('click', function(ev) {
-    // ev.latlng gives us the coordinates of
-    // the spot clicked on the map.
-    var fc = ev.latlng;
-    var c = ev.latlng;
+var bufferLayer = L.mapbox.featureLayer().addTo(map);
+var airportLayer = L.mapbox.featureLayer()
+  .loadURL('sources/airport_centroid2.geojson')
+  .on('ready', run);
 
-    var geojson = [
-          {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [fc.lng, fc.lat]
-        },
-        "properties": {
-          "marker-color": "#ff8888"
-        },
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [c.lng, c.lat]
-        },
-        "properties": {
-          "marker-color": "#ff8888"
-        }
-      }, 
-        {
-        "type": "Feature",
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
-            [fc.lng, fc.lat],
-            [c.lng, c.lat]
-          ]
-        },
-        "properties": {
-          "stroke": "#000",
-          "stroke-opacity": 0.5,
-          "stroke-width": 4
-        }
-      }
-    ];
-
-distanceLayer.setGeoJSON(geojson);
-
-    var container = document.getElementById('distance');
-    container.innerHTML = (fc.distanceTo(c)).toFixed(0) + 'm';
-});*/
+function run() {
+  var points = airportLayer.getGeoJSON();
+    var circle = L.circle(points, 8046);
+    bufferLayer.setGeoJSON(circle)
+    
+  /*var buffer = turf.buffer(points, 5, 'miles');
+  bufferLayer.setGeoJSON(buffer)*/
+    }
 
 distanceLayer = L.mapbox.featureLayer().addTo(map);
 
@@ -180,12 +144,24 @@ L.control.locate({
     position: 'topleft',
     drawCircle: true,
     follow: true,
+    locateOptions: {
+      maxZoom:12
+    }
 }).addTo(map);
 
 map.on('locationfound', function(e) { 
   var fc = e.latlng;
+  var geojson = [
+  {
+    "type": "Feature",
+    "geometry": {
+    "type": "Point",
+    "coordinates": [fc.lng, fc.lat]
+        }
+  }
+]
   
-  map.on('click', function(e) {
+  /*map.on('click', function(e) {
     var c = e.latlng;
     var geojson = [
       {
@@ -213,23 +189,20 @@ map.on('locationfound', function(e) {
         }
       }
     ];
+    })*/
 
 distanceLayer.setGeoJSON(geojson);
+/*var isInside = turf.inside(fc, bufferLayer);*/
 
 var container = document.getElementById('distance');
 container.innerHTML = ((fc.distanceTo(c)/1000) * 0.621).toFixed(3) + 'miles';
-}),
 
-map.on('stopfollowing', function() {
+
+/*map.on('stopfollowing', function() {
   map.off()
-});
-});
-
-/*lc.start();
-
-map.on('startfollowing', function(e) {
-  var fc = e.latlng
 });*/
+});
+
 L.control.scale().addTo(map);
 L.control.layers({
 'Base Map': L.mapbox.tileLayer('scarndp.lg4e20pk').addTo(map),
