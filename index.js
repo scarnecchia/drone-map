@@ -15,8 +15,8 @@ var southWest = L.latLng(8.538, -178.989),
 .addControl(L.mapbox.geocoderControl('mapbox.places'))
 .setView([40.044, -98.130], 5);
 
-/*var tfrURL = 'https://tempflightrestrictions.herokuapp.com/tfr';*/
-/*var powerPlantURL = 'sources/USPowerPlants2.geojson';
+/*var tfrURL = 'https://tempflightrestrictions.herokuapp.com/tfr';
+var powerPlantURL = 'sources/USPowerPlants2.geojson';
 var prisonsURL = 'sources/prisonsUS2.geojson';*/
 
 /*var tfrStyle = {
@@ -24,7 +24,7 @@ var prisonsURL = 'sources/prisonsUS2.geojson';*/
    'fillOpacity': 0.6,
    'stroke': false,
    'lineJoin': 'round'
-}
+}*/
 
 var powerPlantStyle = {
    'fillColor': '#aaaaaa',
@@ -38,7 +38,7 @@ var prisonStyle = {
    'fillOpacity': 0.6,
    'stroke': false,
    'lineJoin': 'round'
-}*/
+}
 
 /*   $.getJSON(powerPlantURL, function(data){
     var powerPlant = L.geoJson(data, {
@@ -124,41 +124,18 @@ $('.js-close').click(function() {
     }).addTo(map);
     })*/
 
-var bufferLayer = L.mapbox.featureLayer().addTo(map);
-var airportLayer = L.mapbox.featureLayer()
-  .loadURL('sources/airport_centroid2.geojson')
-  .on('ready', run);
-
-function run() {
-  var points = airportLayer.getGeoJSON();
-  var buffer = turf.buffer(points, 5, 'miles');
-  bufferLayer.setGeoJSON(buffer)
-    }
-
 distanceLayer = L.mapbox.featureLayer().addTo(map);
 
 L.control.locate({
     position: 'topleft',
     drawCircle: true,
     follow: true,
-    locateOptions: {
-      maxZoom:12
-    }
 }).addTo(map);
 
 map.on('locationfound', function(e) { 
   var fc = e.latlng;
-  var geojson = [
-  {
-    "type": "Feature",
-    "geometry": {
-    "type": "Point",
-    "coordinates": [fc.lng, fc.lat]
-        }
-  }
-]
   
-  /*map.on('click', function(e) {
+  map.on('click', function(e) {
     var c = e.latlng;
     var geojson = [
       {
@@ -186,18 +163,16 @@ map.on('locationfound', function(e) {
         }
       }
     ];
-    })*/
 
 distanceLayer.setGeoJSON(geojson);
-/*var isInside = turf.inside(fc, bufferLayer);*/
 
 var container = document.getElementById('distance');
 container.innerHTML = ((fc.distanceTo(c)/1000) * 0.621).toFixed(3) + 'miles';
+}),
 
-
-/*map.on('stopfollowing', function() {
+map.on('stopfollowing', function() {
   map.off()
-});*/
+});
 });
 
 L.control.scale().addTo(map);
